@@ -1,0 +1,78 @@
+﻿name: electropi-taskmanager
+
+services:
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: electropi-api
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=ElectroPiTaskManager;User Id=sa;Password=ElectroPi@Strong123;TrustServerCertificate=True;MultipleActiveResultSets=True
+      - ConnectionStrings__Redis=redis:6379
+      - Jwt__SecretKey=ElectroPi-SuperSecret-Key-That-Is-At-Least-32-Characters-Long!
+      - Jwt__Issuer=ElectroPi.TaskManager
+      - Jwt__Audience=ElectroPi.TaskManager.Clients
+      - Jwt__ExpiryMinutes=60
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: on-failure:3
+    networks:
+      - electropi-network
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: electropi-sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=ElectroPi@Strong123
+      - MSSQL_PID=Developer
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+    healthcheck:
+      test:
+        [
+          "CMD", "/opt/mssql-tools18/bin/sqlcmd",
+          "-S", "localhost",
+          "-U", "sa",
+          "-P", "ElectroPi@Strong123",
+          "-Q", "SELECT 1",
+          "-No"
+        ]
+      interval: 10s
+      retries: 10
+      timeout: 5s
+      start_period: 30s
+    networks:
+      - electropi-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: electropi-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      retries: 5
+      timeout: 5s
+    networks:
+      - electropi-network
+
+volumes:
+  sqlserver-data:
+  redis-data:
+
+networks:
+  electropi-network:
+    driver: bridge
