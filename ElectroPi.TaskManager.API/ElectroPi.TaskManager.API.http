@@ -1,0 +1,6 @@
+@ElectroPi.TaskManager.API_HostAddress = http://localhost:5084
+
+GET {{ElectroPi.TaskManager.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
