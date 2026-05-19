@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectroPi.TaskManager.Appli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectroPi.TaskManager.Domain.Tests", "ElectroPi.TaskManager.Domain.Tests\ElectroPi.TaskManager.Domain.Tests.csproj", "{768B5629-DE2F-4ACA-BBDD-3CB7B7209F4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectroPi.TaskManager.Domain", "..\ElectroPi.TaskManager.Solution\ElectroPi.TaskManager.Domain\ElectroPi.TaskManager.Domain.csproj", "{A494B785-F8BA-998D-F739-5AA8FECE1BA3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectroPi.TaskManager.Application", "..\ElectroPi.TaskManager.Application\ElectroPi.TaskManager.Application.csproj", "{284536AC-5D6A-8628-4A55-437A45AE453C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectroPi.TaskManager.Application", "..\ElectroPi.TaskManager.Solution\ElectroPi.TaskManager.Application\ElectroPi.TaskManager.Application.csproj", "{10DE99CF-AE3A-EECE-D66B-A5FEF538CFED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectroPi.TaskManager.Domain", "..\ElectroPi.TaskManager.Domain\ElectroPi.TaskManager.Domain.csproj", "{23C043DD-AF27-DE2C-B0C8-F457B9790ED4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +31,14 @@ Global
 		{768B5629-DE2F-4ACA-BBDD-3CB7B7209F4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{768B5629-DE2F-4ACA-BBDD-3CB7B7209F4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{768B5629-DE2F-4ACA-BBDD-3CB7B7209F4F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A494B785-F8BA-998D-F739-5AA8FECE1BA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A494B785-F8BA-998D-F739-5AA8FECE1BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A494B785-F8BA-998D-F739-5AA8FECE1BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A494B785-F8BA-998D-F739-5AA8FECE1BA3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{10DE99CF-AE3A-EECE-D66B-A5FEF538CFED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{10DE99CF-AE3A-EECE-D66B-A5FEF538CFED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{10DE99CF-AE3A-EECE-D66B-A5FEF538CFED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{10DE99CF-AE3A-EECE-D66B-A5FEF538CFED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{284536AC-5D6A-8628-4A55-437A45AE453C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{284536AC-5D6A-8628-4A55-437A45AE453C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{284536AC-5D6A-8628-4A55-437A45AE453C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{284536AC-5D6A-8628-4A55-437A45AE453C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23C043DD-AF27-DE2C-B0C8-F457B9790ED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23C043DD-AF27-DE2C-B0C8-F457B9790ED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23C043DD-AF27-DE2C-B0C8-F457B9790ED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23C043DD-AF27-DE2C-B0C8-F457B9790ED4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
