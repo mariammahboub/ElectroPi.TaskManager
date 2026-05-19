@@ -48,7 +48,9 @@ namespace ElectroPi.TaskManager.API.Extensions
                         .SelectMany(attr => attr.Versions)
                         .ToList();
 
-                    return versions?.Any(v => $"v{v}" == docName) ?? false;
+                    if (versions == null || versions.Count == 0) return true;
+
+                    return versions.Any(v => $"v{v.MajorVersion}" == docName);
                 });
 
                 options.SwaggerDoc("v1", new OpenApiInfo
