@@ -387,6 +387,6 @@ dotnet ef database update \
 
 <div align="center">
 
-Built with ❤️ by **Mariam Mahboub** Backend .NET Developer Assessment
+Built with by **Mariam Mahboub** Backend .NET Developer
 
 </div>
